@@ -1,16 +1,16 @@
-import AboutModule from './about'
-import AboutController from './about.controller';
-import AboutComponent from './about.component';
-import AboutTemplate from './about.html';
+import itemsPageModule from './about'
+import itemsPageController from './about.controller';
+import itemsPageComponent from './about.component';
+import itemsPageTemplate from './about.html';
 
-describe('About', () => {
+describe('itemsPage', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(AboutModule.name));
+  beforeEach(window.module(itemsPageModule.name));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new AboutController();
+      return new itemsPageController();
     };
   }));
 
@@ -30,16 +30,16 @@ describe('About', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(AboutTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(itemsPageTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = AboutComponent;
+      let component = itemsPageComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(AboutTemplate);
+        expect(component.template).to.equal(itemsPageTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
@@ -47,7 +47,7 @@ describe('About', () => {
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(AboutController);
+        expect(component.controller).to.equal(itemsPageController);
       });
   });
 });
