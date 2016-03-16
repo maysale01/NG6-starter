@@ -1,11 +1,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import <%= name %>Component from './<%= name %>.component';
+import <%= upCaseName %>Component from './<%= upCaseName %>.component';
 
-let <%= name %>Module = angular.module('<%= name %>', [
+let <%= upCaseName %>Module = angular.module('<%= upCaseName %>', [
   uiRouter
 ])
-
-.component('<%= name %>', <%= name %>Component);
+.component('<%= lowerCaseName %>', <%= upCaseName %>Component);
 
 export default <%= name %>Module;

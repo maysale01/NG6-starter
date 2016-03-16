@@ -1,16 +1,16 @@
-import <%= upCaseName %>Module from './<%= upCaseName %>'
-import <%= upCaseName %>Controller from './<%= upCaseName %>.controller';
-import <%= upCaseName %>Component from './<%= upCaseName %>.component';
-import <%= upCaseName %>Template from './<%= upCaseName %>.html';
+import AboutPageModule from './AboutPage'
+import AboutPageController from './AboutPage.controller';
+import AboutPageComponent from './AboutPage.component';
+import AboutPageTemplate from './AboutPage.html';
 
-describe('<%= upCaseName %>', () => {
+describe('AboutPage', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(<%= upCaseName %>Module.name));
+  beforeEach(window.module(AboutPageModule.name));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new <%= upCaseName %>Controller();
+      return new AboutPageController();
     };
   }));
 
@@ -26,16 +26,16 @@ describe('<%= upCaseName %>', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(<%= upCaseName %>Template).to.match(/{{\s?ctrl\.name\s?}}/g);
+      expect(AboutPageTemplate).to.match(/{{\s?ctrl\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = <%= upCaseName %>Component;
+      let component = AboutPageComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(<%= upCaseName %>Template);
+        expect(component.template).to.equal(AboutPageTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
@@ -43,7 +43,7 @@ describe('<%= upCaseName %>', () => {
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(<%= upCaseName %>Controller);
+        expect(component.controller).to.equal(AboutPageController);
       });
   });
 });

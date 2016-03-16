@@ -1,13 +1,13 @@
-import template from './<%= name %>.html';
-import controller from './<%= name %>.controller';
-import './<%= name %>.styl';
+import template from './<%= upCaseName %>.html';
+import controller from './<%= upCaseName %>.controller';
+import './<%= upCaseName %>.styl';
 
-let <%= name %>Component = {
+let <%= upCaseName %>Component = {
   restrict: 'E',
   bindings: {},
   template,
   controller,
-  controllerAs: 'vm'
+  controllerAs: 'ctrl'
 };
 
-export default <%= name %>Component;
+export default <%= upCaseName %>Component;
