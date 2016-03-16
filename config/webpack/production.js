@@ -1,11 +1,11 @@
 var webpack = require('webpack');
 var path    = require('path');
-var config  = require('./webpack.config');
+var config  = require('./common');
 
 config.output = {
   filename: '[name].bundle.js',
   publicPath: '',
-  path: path.resolve(__dirname, 'dist')
+  path: path.resolve(__dirname, '../../dist')
 };
 
 config.plugins = config.plugins.concat([
@@ -20,6 +20,11 @@ config.plugins = config.plugins.concat([
       // angular global variable, so we should keep it unchanged
       except: ['$super', '$', 'exports', 'require', 'angular']
     }
+  }),  
+  new webpack.DefinePlugin({
+    ENV: JSON.stringify(
+      require(path.join(__dirname, '../env', 'production'))
+    )
   })
 ]);
 

@@ -40,9 +40,9 @@ let paths = {
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**')
 };
 
-// use webpack.config.js to build modules
+// use webpack/production to build modules
 gulp.task('webpack', (cb) => {
-  const config = require('./webpack.dist.config');
+  const config = require('./config/webpack/production');
   config.entry.app = paths.entry;
 
   webpack(config, (err, stats) => {
@@ -61,7 +61,7 @@ gulp.task('webpack', (cb) => {
 });
 
 gulp.task('serve', () => {
-  const config = require('./webpack.dev.config');
+  const config = require('./config/webpack/development');
   config.entry.app = [
     // this modules required to make HRM working
     // it responsible for all this webpack magic
