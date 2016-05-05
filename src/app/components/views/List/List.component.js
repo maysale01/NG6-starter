@@ -5,7 +5,7 @@ let ListComponent = {
   restrict: 'E',
   bindings: {
     items: "<",
-    removeItem: "<"
+    remove: "<"
   },
   template,
   controller,
