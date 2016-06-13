@@ -2,10 +2,18 @@ var path    = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var srcDir = path.resolve('src');
+
+console.log(srcDir);
+
 module.exports = {
   devtool: 'sourcemap',
   entry: {},
   module: {
+    resolve: {
+      root: [srcDir],
+      extensions: ['', '.js', '.styl']
+    },
     loaders: [
       { test: /\.js$/, include: [/src/], loader: 'ng-annotate!babel' },
       { test: /\.html$/, loader: 'raw' },
